@@ -8,5 +8,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npx @hunt3r157/license-lens check
+      - name: Install deps (if lockfile present)
+        run: |
+          if [ -f package-lock.json ]; then npm ci; \
+          elif [ -f pnpm-lock.yaml ]; then corepack enable && pnpm i --frozen-lockfile; \
+          elif [ -f yarn.lock ]; then corepack enable && yarn install --frozen-lockfile; \
+          else echo "No lockfile found, skipping install"; fi
+      - name: Run License Lens (local CLI)
+        run: node bin/license-lens.mjs check
