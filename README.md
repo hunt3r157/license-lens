@@ -2,9 +2,9 @@
 
 > Zero‑dep CLI + GitHub Action to **scan dependency licenses** and **fail PRs** on disallowed or unknown licenses. Works with npm/pnpm/yarn (Node ≥ 18).
 
-[![CI](https://img.shields.io/github/actions/workflow/status/<your-username>/license-lens/ci.yml?branch=main)](https://github.com/<your-username>/license-lens/actions)
-[![Release](https://img.shields.io/github/actions/workflow/status/<your-username>/license-lens/release.yml?label=release)](https://github.com/<your-username>/license-lens/actions)
-[![npm](https://img.shields.io/npm/v/%40hunt3r%2Flicense-lens.svg)](https://www.npmjs.com/package/@hunt3r/license-lens)
+[![build](https://img.shields.io/github/actions/workflow/status/hunt3r157/license-lens/ci.yml?branch=main&label=build)](https://github.com/hunt3r157/license-lens/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/actions/workflow/status/hunt3r157/license-lens/release.yml?label=release)](https://github.com/hunt3r157/license-lens/actions/workflows/release.yml)
+[![npm](https://img.shields.io/npm/v/%40hunt3r157%2Flicense-lens.svg)](https://www.npmjs.com/package/@hunt3r157/license-lens)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
