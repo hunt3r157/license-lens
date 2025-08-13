@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/license-lens.git"
+    "url": "git+https://github.com/hunt3r157/license-lens.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/license-lens/issues"
+    "url": "https://github.com/hunt3r157/license-lens/issues"
   },
-  "homepage": "https://github.com/your-username/license-lens#readme",
+  "homepage": "https://github.com/hunt3r157/license-lens#readme",
   "scripts": {
     "lens:check": "node bin/license-lens.mjs check"
   }
