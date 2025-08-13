@@ -1,18 +1,25 @@
 name: license-lens CI
 on: [push, pull_request]
 jobs:
-  check:
+  selftest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install deps (if lockfile present)
+      - name: Make a tiny fixture and install one dep
         run: |
-          if [ -f package-lock.json ]; then npm ci; \
-          elif [ -f pnpm-lock.yaml ]; then corepack enable && pnpm i --frozen-lockfile; \
-          elif [ -f yarn.lock ]; then corepack enable && yarn install --frozen-lockfile; \
-          else echo "No lockfile found, skipping install"; fi
-      - name: Run License Lens (local CLI)
-        run: node bin/license-lens.mjs check
+          mkdir -p fixtures/sample && cd fixtures/sample
+          npm init -y >/dev/null
+          npm i left-pad@1.3.0 --no-audit --no-fund
+      - name: Run License Lens against the fixture
+        run: |
+          cd fixtures/sample
+          node ../../bin/license-lens.mjs check
+  packaging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure publishable files are correct
+        run: npm pack --dry-run
