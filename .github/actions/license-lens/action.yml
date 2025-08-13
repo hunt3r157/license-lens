@@ -1,0 +1,24 @@
+name: 'License Lens'
+description: 'Scan dependency licenses and fail on disallowed/unknown per policy'
+inputs:
+  disallow:
+    description: 'Comma-separated list of disallowed licenses'
+    required: false
+  warn:
+    description: 'Comma-separated list of warned licenses'
+    required: false
+  allow-unlicensed:
+    description: 'Set to true to allow UNKNOWN/UNLICENSED'
+    required: false
+    default: 'false'
+runs:
+  using: 'composite'
+  steps:
+    - shell: bash
+      run: |
+        if [ -f package-lock.json ] || [ -f pnpm-lock.yaml ] || [ -f yarn.lock ]; then
+          if command -v npm >/dev/null 2>&1; then npm ci --ignore-scripts || true; fi
+          if command -v pnpm >/dev/null 2>&1; then pnpm i --frozen-lockfile || true; fi
+          if command -v yarn >/dev/null 2>&1; then yarn install --frozen-lockfile || true; fi
+        fi
+        npx license-lens check --disallow "${{ inputs.disallow }}" --warn "${{ inputs.warn }}" $([ "${{ inputs.allow-unlicensed }}" = "true" ] || echo "--no-allow-unlicensed")
