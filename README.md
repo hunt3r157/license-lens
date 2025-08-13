@@ -4,7 +4,7 @@
 
 [![build](https://img.shields.io/github/actions/workflow/status/hunt3r157/license-lens/ci.yml?branch=main&label=build)](https://github.com/hunt3r157/license-lens/actions/workflows/ci.yml)
 [![release](https://img.shields.io/github/actions/workflow/status/hunt3r157/license-lens/release.yml?label=release)](https://github.com/hunt3r157/license-lens/actions/workflows/release.yml)
-[![npm](https://img.shields.io/npm/v/%40hunt3r157%2Flicense-lens.svg)](https://www.npmjs.com/package/@hunt3r157/license-lens)
+[![npm](https://img.shields.io/npm/v/%40hunt3r%2Flicense-lens.svg)](https://www.npmjs.com/package/@hunt3r/license-lens)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
