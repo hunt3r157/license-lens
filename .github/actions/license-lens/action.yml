@@ -21,4 +21,4 @@ runs:
           if command -v pnpm >/dev/null 2>&1; then pnpm i --frozen-lockfile || true; fi
           if command -v yarn >/dev/null 2>&1; then yarn install --frozen-lockfile || true; fi
         fi
-        npx @hunt3r157/license-lens check --disallow "${{ inputs.disallow }}" --warn "${{ inputs.warn }}" $([ "${{ inputs.allow-unlicensed }}" = "true" ] || echo "--no-allow-unlicensed")
+        npx @hunt3r/license-lens check --disallow "${{ inputs.disallow }}" --warn "${{ inputs.warn }}" $([ "${{ inputs.allow-unlicensed }}" = "true" ] || echo "--no-allow-unlicensed")
