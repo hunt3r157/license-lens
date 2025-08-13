@@ -1,6 +1,6 @@
 {
   "name": "@hunt3r157/license-lens",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Scan dependency licenses and fail PRs on disallowed or unknown licenses. Zero-dep CLI + GitHub Action.",
   "license": "MIT",
   "type": "module",
