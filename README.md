@@ -4,7 +4,7 @@
 
 [![CI](https://img.shields.io/github/actions/workflow/status/<your-username>/license-lens/ci.yml?branch=main)](https://github.com/<your-username>/license-lens/actions)
 [![Release](https://img.shields.io/github/actions/workflow/status/<your-username>/license-lens/release.yml?label=release)](https://github.com/<your-username>/license-lens/actions)
-[![npm](https://img.shields.io/npm/v/license-lens.svg)](https://www.npmjs.com/package/license-lens)
+[![npm](https://img.shields.io/npm/v/%40hunt3r157%2Flicense-lens.svg)](https://www.npmjs.com/package/@hunt3r157/license-lens)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
@@ -42,7 +42,7 @@
 npm ci   # or: pnpm i --frozen-lockfile  |  yarn install --frozen-lockfile
 
 # run a scan
-npx license-lens check
+npx @hunt3r157/license-lens check
 ```
 
 ### Enforce policy (fail build if disallowed/unknown)
@@ -57,7 +57,7 @@ cat > license-lens.config.json <<'JSON'
 JSON
 
 # run
-npx license-lens check
+npx @hunt3r157/license-lens check
 ```
 
 ---
@@ -65,16 +65,16 @@ npx license-lens check
 ## Usage
 ```bash
 # basic
-npx license-lens check
+npx @hunt3r157/license-lens check
 
 # JSON output (machine-readable)
-npx license-lens check --format json
+npx @hunt3r157/license-lens check --format json
 
 # treat UNKNOWN/UNLICENSED as error (default if allowUnlicensed=false)
-npx license-lens check --no-allow-unlicensed
+npx @hunt3r157/license-lens check --no-allow-unlicensed
 
 # override config file entries via flags
-npx license-lens check --disallow GPL-3.0,AGPL-3.0 --warn LGPL-3.0
+npx @hunt3r157/license-lens check --disallow GPL-3.0,AGPL-3.0 --warn LGPL-3.0
 ```
 
 **Exit codes**
@@ -117,7 +117,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: npm ci
-      - run: npx license-lens check
+      - run: npx @hunt3r157/license-lens check
 ```
 
 Make this check **Required** on your protected branches.

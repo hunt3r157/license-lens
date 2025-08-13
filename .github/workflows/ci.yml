@@ -9,4 +9,4 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npx license-lens check
+      - run: npx @hunt3r157/license-lens check
