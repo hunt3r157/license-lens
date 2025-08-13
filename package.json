@@ -1,5 +1,5 @@
 {
-  "name": "@hunt3r157/license-lens",
+  "name": "@undefined/license-lens",
   "version": "0.1.2",
   "description": "Scan dependency licenses and fail PRs on disallowed or unknown licenses. Zero-dep CLI + GitHub Action.",
   "license": "MIT",
@@ -33,5 +33,8 @@
   "homepage": "https://github.com/hunt3r157/license-lens#readme",
   "scripts": {
     "lens:check": "node bin/license-lens.mjs check"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
